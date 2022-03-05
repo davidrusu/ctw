@@ -1,12 +1,14 @@
+<a href="https://crates.io/crates/ctw"><img src="https://img.shields.io/crates/v/ctw.svg"></a>
+
 # Context Tree Weighting (CTW)
 
-CTW is a lightweight, practical and well performing sequence prediction algorithm discovered by Frans Willems, Yuri Shtarkov and Tjalling Tjalkens in 1995.
+CTW is a lightweight, practical and well performing sequence prediction algorithm discovered by Frans Willems, Yuri Shtarkov and Tjalling Tjalkens (1995).
 
 It has good query and update performance (linear in the context length).
 
 # Useage
 
-The following example demonstrates Ctw learning the altenating binary sequence 101010...
+The following example demonstrates CTW learning the altenating binary sequence 101010...
 
 ```rust
 use ctw::CtwTree;
