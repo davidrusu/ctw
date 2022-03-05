@@ -5,8 +5,6 @@ mod ctw_tree;
 
 use ctw_tree::CtwTree;
 
-use crate::ctw_node::CtwNode;
-
 fn main() {
     let mut rng = rand::thread_rng();
     let mut tree = CtwTree::new(16);
@@ -19,5 +17,5 @@ fn main() {
         print!("{}", if prediction { 1 } else { 0 });
         tree.update(prediction);
     }
-    println!("");
+    println!();
 }
