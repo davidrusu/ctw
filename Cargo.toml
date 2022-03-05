@@ -1,5 +1,12 @@
 [package]
 name = "ctw"
+license = "MIT"
+authors = [ "David Rusu <davidrusu.me@gmail.com>" ]
+description = "CTW Sequence Predictor"
+keywords = [ "ctw", "sequence", "prediction" ]
+homepage = "https://github.com/davidrusu/ctw"
+repository = "https://github.com/davidrusu/ctw"
+documentation = "https://docs.rs/ctw"
 version = "0.1.0"
 edition = "2021"
 
