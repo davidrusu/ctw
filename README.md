@@ -13,17 +13,22 @@ use ctw::CtwTree;
 let mut rng = rand::thread_rng();
 let mut tree = CtwTree::new(8); // context length is 8
 
-let pattern = [true, false].into_iter().cycle().take(100); // true, false, true, ..  repeated 100 times
+let pattern = [true, false].into_iter().cycle().take(100); // true, false, true, ..
 tree.update_batch(&Vec::from_iter(pattern));
 
 let mut predictions = Vec::new();
-for _ in 0..8 {
+
+for _ in 0..10 {
     let prediction = tree.sample(&mut rng);
     tree.update(prediction);
-    predictions.push(if prediction { 1 } else { 0 }); // convert bool to 1 and 0 for legibility
+
+    // convert bool to 1 and 0 for legibility
+    let bit = if prediction { 1 } else { 0 };
+    predictions.push(bit);
 }
-println!("predictions: {predictions:?}"); // --> "prediction: [1, 0, 1, 0, 1, 0, 1, 0]"
-assert_eq!(predictions, vec![1,0,1,0,1,0,1,0]);
+
+println!("predictions: {predictions:?}"); // --> "prediction: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]"
+assert_eq!(predictions, vec![1,0,1,0,1,0,1,0,1,0]);
 ```
 
 # Resources
